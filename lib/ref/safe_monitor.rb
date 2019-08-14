@@ -13,19 +13,19 @@ module Ref
       @count = 0
       @mutex = defined?(Mutex) ? Mutex.new : nil
     end
-  
+
     # Acquire an exclusive lock.
     def lock
       if @mutex
         if @owner != Thread.current.object_id
-          @mutex.lock
           @owner = Thread.current.object_id
+          @mutex.lock
         end
         @count += 1
       end
       true
     end
-    
+
     # Release the exclusive lock.
     def unlock
       if @mutex
@@ -38,7 +38,7 @@ module Ref
         end
       end
     end
-  
+
     # Run a block of code with an exclusive lock.
     def synchronize
       lock
