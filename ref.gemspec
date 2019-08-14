@@ -1,28 +1,29 @@
-$:.push File.join(File.dirname(__FILE__), 'lib')
-
-require 'ref/version'
+# -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name        = 'ref'
-  s.version     = '1.0.5'
-  s.authors     = ['Brian Durand', 'The Ruby Concurrency Team']
-  s.email       = ['bbdurand@gmail.com', 'concurrent-ruby@googlegroups.com']
-  s.homepage    = "http://github.com/ruby-concurrency/ref"
-  s.summary     = "Library that implements weak, soft, and strong references in Ruby."
-  s.description = "Library that implements weak, soft, and strong references in Ruby that work across multiple runtimes (MRI,Jruby and Rubinius). Also includes implementation of maps/hashes that use references and a reference queue."
-  s.license     = "MIT"
-  s.date        = Time.now.strftime('%Y-%m-%d')
+  s.name = "ref"
+  s.version = "1.0.5"
 
-  s.files         = ['README.md', 'MIT_LICENSE']
-  s.files        += Dir['lib/**/*.*']
-  s.files        += Dir['ext/**/*.*']
-  s.files        += Dir['test/**/*.*']
+  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
+  s.authors = ["Brian Durand"]
+  s.date = "2013-05-20"
+  s.description = "Library that implements weak, soft, and strong references in Ruby that work across multiple runtimes (MRI, REE, YARV, Jruby, Rubinius, and IronRuby). Also includes implementation of maps/hashes that use references and a reference queue."
+  s.email = ["bbdurand@gmail.com"]
+  s.extra_rdoc_files = ["README.rdoc"]
+  s.files = ["README.rdoc"]
+  s.homepage = "http://github.com/bdurand/ref"
+  s.licenses = ["MIT"]
+  s.rdoc_options = ["--charset=UTF-8", "--main", "README.rdoc"]
+  s.require_paths = ["lib"]
+  s.rubygems_version = "1.8.30"
+  s.summary = "Library that implements weak, soft, and strong references in Ruby."
 
-  s.require_paths = ['lib']
+  if s.respond_to? :specification_version then
+    s.specification_version = 4
 
-  s.has_rdoc         = true
-  s.rdoc_options     = ["--charset=UTF-8", "--main", "README.md"]
-  s.extra_rdoc_files = ["README.md"]
-
-  s.required_ruby_version = '>= 1.8.7'
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+    else
+    end
+  else
+  end
 end
